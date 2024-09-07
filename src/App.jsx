@@ -32,7 +32,7 @@ function App() {
       formData.append('file', file);
 
 
-      const response = await axios.post('http://localhost:5001/upload-files', formData);
+      const response = await axios.post('https://ragbackend.onrender.com/upload-files', formData);
       console.log(response);
       setId(response.data.id)
       setUploaded(true);
@@ -47,7 +47,7 @@ function App() {
 
   const handleAsk = async () => {
     try {
-      const response = await axios.post('http://localhost:5001/ask-questions', { que: question , id : id});
+      const response = await axios.post('https://ragbackend.onrender.com/ask-questions', { que: question , id : id});
       setAnswer(response.data);
     } catch (error) {
       console.error(error);
